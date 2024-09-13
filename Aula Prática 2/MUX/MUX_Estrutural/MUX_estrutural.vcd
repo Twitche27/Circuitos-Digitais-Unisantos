@@ -1,0 +1,85 @@
+$date
+	Fri Sep 13 09:26:36 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module MUX_estrutural_tb $end
+$var wire 1 ! Y $end
+$var reg 4 " D [3:0] $end
+$var reg 2 # S [1:0] $end
+$scope module uut $end
+$var wire 4 $ D [3:0] $end
+$var wire 2 % S [1:0] $end
+$var wire 1 ! Y $end
+$var wire 1 & a1 $end
+$var wire 1 ' a2 $end
+$var wire 1 ( a3 $end
+$var wire 1 ) a4 $end
+$var wire 1 * ns0 $end
+$var wire 1 + ns1 $end
+$var wire 1 , out1 $end
+$var wire 1 - out2 $end
+$var wire 1 . out3 $end
+$var wire 1 / out4 $end
+$var wire 1 0 y1 $end
+$var wire 1 1 y2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+01
+00
+0/
+0.
+0-
+0,
+1+
+1*
+0)
+0(
+0'
+1&
+b0 %
+b1010 $
+b0 #
+b1010 "
+0!
+$end
+#20
+1!
+11
+10
+0&
+1-
+0*
+1'
+b1 #
+b1 %
+#40
+0!
+01
+00
+1(
+0-
+1*
+0+
+0'
+b10 #
+b10 %
+#60
+1!
+0(
+1/
+0*
+1)
+b11 #
+b11 %
+#80

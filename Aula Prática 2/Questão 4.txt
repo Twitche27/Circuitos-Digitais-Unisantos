@@ -1,0 +1,1 @@
+Não, eles não são iguais pois cada estilo de codificação utliza recursos diferentes para montar o circuito digital, sendo que, por exemplo, o estilo comportamental pode até mesmo ter variações no seu funcionamento temporal devido ao seu funcionamento, como ocorreu com meu caso observado em aula
