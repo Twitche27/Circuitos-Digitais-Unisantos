@@ -3,7 +3,7 @@
 
 module Decoder_tb;
 
-    reg [3:0]A;
+    reg [2:0]A;
     reg E;
     wire [7:0]S;
     Decoder uut(A, E, S);
