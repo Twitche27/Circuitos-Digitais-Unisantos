@@ -4,5 +4,5 @@ module Full_Subtractor(a, b, s, Cin, Cout);
     output s, Cout;
 
     assign s = a ^ b ^ Cin;
-    assign Cout = (!a & Cin) + (!b & Cin) + (b & Cin); 
+    assign Cout = (~a & b) | (~a & Cin) | (b & Cin); 
 endmodule

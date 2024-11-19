@@ -1,4 +1,4 @@
-module Three_State(a, s, EN);
+module Three_State_Arithmetic(a, s, EN);
     input [8:0]a;
     output reg [8:0]s;
     input EN;
