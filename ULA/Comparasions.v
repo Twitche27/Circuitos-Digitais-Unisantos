@@ -1,4 +1,4 @@
-`include "Three_State_Logic.v"
+`include "Three_States.v"
 
 module Greater_Equal(a, b, s);
     input [7:0]a;
@@ -26,7 +26,7 @@ module Less_Equal(a, b, s);
     end
 endmodule
 
-module EN_Greater_Less(a, b, s, EN);
+module EN_Comparasions(a, b, s, EN);
     input [7:0]a;
     input [7:0]b;
     input EN;

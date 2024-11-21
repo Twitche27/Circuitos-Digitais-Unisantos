@@ -1,4 +1,4 @@
-`include "Three_State_Arithmetic.v"
+`include "Three_States.v"
 
 module Half_Subtractor(a, b, s, c);
 
