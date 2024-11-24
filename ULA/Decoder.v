@@ -1,12 +1,12 @@
-module Decoder(A, E, S);
+module Decoder(A, EN, S, clk);
 
     input [2:0]A;
-    input E;
+    input EN, clk;
     output reg [7:0]S;
-    always @ (A) begin
-        if (E == 1'b1)
+    always @ (*) begin
+        if (EN)
             case (A)  
-                default:S = 8'b00000001;
+                3'b000:S = 8'b00000001;
                 3'b001:S = 8'b00000010;
                 3'b010:S = 8'b00000100;
                 3'b011:S = 8'b00001000;

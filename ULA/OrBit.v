@@ -22,14 +22,14 @@ module Or8bit(a, b, s);
     OrBit u8(a[7], b[7], s[7]);
 endmodule
 
-module En_Or8Bit(a, b, EN, s);
+module EN_Or8Bit(a, b, EN, s);
     input [7:0]a;
     input [7:0]b;
     input EN;
-    output [7:0]s;
+    output [8:0]s;
     wire [7:0]w;
 
     Or8bit u1(a, b, w);
 
-    Three_State_Sem_Carry u2(w, s, EN);
+    Three_State_Arithmetic u2({1'b0, w}, s, EN);
 endmodule

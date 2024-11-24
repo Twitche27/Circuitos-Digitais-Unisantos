@@ -1,22 +1,21 @@
 `include "Three_States.v"
 
 module Half_Adder(a, b, s, c);
-
     input a, b;
     output reg s, c;
 
     always @ (a, b) begin
         if (a == 1'b0 && b == 1'b0) begin
-            s = 0;
-            c = 0;
+            s = 1'b0;
+            c = 1'b0;
         end
         if ((a == 1'b1 && b == 1'b0) || (a == 1'b0 && b == 1'b1)) begin
-            s = 1;
-            c = 0;
+            s = 1'b1;
+            c = 1'b0;
         end
         if (a == 1'b1 && b == 1'b1) begin
-            s = 0;
-            c = 1;
+            s = 1'b0;
+            c = 1'b1;
         end
     end     
 endmodule
@@ -34,7 +33,7 @@ module Adder(a, b, s);
     input [7:0]a;
     input [7:0]b;
     output [8:0]s;
-    output [7:0]c;
+    wire [7:0]c;
 
     Half_Adder u1(a[0], b[0], s[0], c[0]);
     Full_Adder u2(a[1], b[1], s[1], c[0], c[1]);
@@ -46,7 +45,7 @@ module Adder(a, b, s);
     Full_Adder u8(a[7], b[7], s[7], c[6], s[8]);
 endmodule
 
-module EN_Adder(a, b, s, EN);
+module EN_Adder(a, b, EN, s);
     input [7:0]a;
     input [7:0]b;
     output [8:0]s;
@@ -54,6 +53,5 @@ module EN_Adder(a, b, s, EN);
     wire [8:0]w;
 
     Adder u1(a, b, w);
-
     Three_State_Arithmetic u2(w, s, EN);
 endmodule
