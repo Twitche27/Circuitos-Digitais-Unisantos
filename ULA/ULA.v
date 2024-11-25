@@ -37,9 +37,9 @@ module ULA (
             Enablers <= 8'b00000000;
     end
 
-    always @(posedge clk) begin
-        $display("Time: %0d, Enablers: %b, saida: %b, OP: %b, EN: %b", $time, Enablers, s, OP, EN);
-    end
+    // always @(posedge clk) begin
+    //     $display("Time: %0d, Enablers: %b, saida: %b, OP: %b, EN: %b", $time, Enablers, s, OP, EN);
+    // end
 
 endmodule
     
@@ -76,9 +76,9 @@ module ULA_Final(
         endcase
     end
 
-    always @(posedge clk) begin
-    $display("Time: %0d, State: %b, entA: %b, entB: %b, reg1s: %b, reg2s: %b, ula_out: %b, saidaF: %b, PR: %b, CLR: %b", 
-             $time, state, entA, entB, reg1s, reg2s, ula_out, saidaF, PR, CLR);
-    end
+    // always @(posedge clk) begin
+    // $display("Time: %0d, State: %b, entA: %b, entB: %b, reg1s: %b, reg2s: %b, ula_out: %b, saidaF: %b, PR: %b, CLR: %b", 
+    //          $time, state, entA, entB, reg1s, reg2s, ula_out, saidaF, PR, CLR);
+    // end
 
 endmodule
