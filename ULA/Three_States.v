@@ -28,8 +28,8 @@ module Three_State_Arithmetic(a, s, EN);
             s <= 9'bzzzzzzzzz;   
     end
 
-    always @(*) begin
-        $display("s: %b, a: %b", s, a);
-    end
+    // always @(*) begin
+    //     $display("s: %b, a: %b", s, a);
+    // end
 endmodule
 `endif

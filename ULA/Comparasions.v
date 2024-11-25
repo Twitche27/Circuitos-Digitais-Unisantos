@@ -7,9 +7,9 @@ module Greater_Equal(a, b, s);
 
     always @(a, b) begin  
         if (a >= b)
-            s = 1;
+            s = 1'b1;
         else
-            s = 0;
+            s = 1'b0;
     end
 endmodule
 
@@ -20,9 +20,9 @@ module Less_Equal(a, b, s);
 
     always @(a, b) begin  
         if (a <= b)
-            s = 1;
+            s = 1'b1;
         else
-            s = 0;
+            s = 1'b0;
     end
 endmodule
 
@@ -36,9 +36,10 @@ module EN_Comparasions(a, b, EN, s);
     generate
         genvar i;
         for (i = 0; i < 3; i = i + 1) begin
-            assign s[i] = 0;
+            assign s[i] = 1'bz;
         end
     endgenerate
+
     Less_Equal u1(a, b, w1);
     Three_State_Logic u2(~w1, s[3], EN);
     Greater_Equal u3(a, b, w2);

@@ -67,7 +67,7 @@ module EN_Subtractor(a, b, EN, s);
     Subtractor u1(a, b, w);
     Three_State_Arithmetic u2(w, s, EN);
 
-    always @(w, s) begin
-    $display("W: %b, S: %b", w, s);
-    end
+    // always @(w, s) begin
+    // $display("W: %b, S: %b", w, s);
+    // end
 endmodule

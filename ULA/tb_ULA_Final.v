@@ -8,16 +8,7 @@ module tb_ULA_Final;
     wire [8:0] s;           // Saída
 
     // Instanciação do módulo ULA_Final
-    ULA_Final uut (
-        .A(A),
-        .B(B),
-        .PR(PR),
-        .CLR(CLR),
-        .EN(EN),
-        .clk(clk),
-        .OPCODE(OPCODE),
-        .s(s)
-    );
+    ULA_Final uut (A, B, PR, CLR, EN, clk, OPCODE, s);
 
     // Geração de clock
     initial begin
@@ -30,8 +21,8 @@ module tb_ULA_Final;
         $dumpfile("ULA_Final.vcd");
         $dumpvars(0, tb_ULA_Final);
         // Inicializar sinais
-        A = 8'b0;
-        B = 8'b0;
+        A = 8'bX;
+        B = 8'bX;
         OPCODE = 3'bXXX;
         PR = 0;
         CLR = 1;
@@ -42,13 +33,17 @@ module tb_ULA_Final;
 
 
         // Caso 1: Soma
-        A = 8'b00000100; B = 8'b00000011; OPCODE = 3'b001;
+        A = 8'b00000100; B = 8'b00000011; OPCODE = 3'b000;
         #5
         A = 8'bX; B = 8'bX; OPCODE = 3'bX;
         #15
-
+        
         // Caso 2: Subtração
-        A = 8'b00001000; B = 8'b00000010; OPCODE = 3'b001;
+        A = 8'b00101010; B = 8'b00000100; OPCODE = 3'b001;
+        #20
+
+        // Caso 3: Comaparações
+        A = 8'b00001000; B = 8'b00000010; OPCODE = 3'b010;
         #20
 
         // Caso 3: AND
@@ -59,13 +54,17 @@ module tb_ULA_Final;
         OPCODE = 3'b100;
         #20
 
+        // Caso 4: XOR
+        OPCODE = 3'b101;
+        #20
+
         // Caso 5: NOT A
         OPCODE = 3'b110;
         #20
 
         // Caso 6: NOT B
         OPCODE = 3'b111;
-        #20
+        #40
 
         // Finalizar simulação
         $finish;
